@@ -25,7 +25,7 @@ interface AnimatedPricingProps {
 
 export function AnimatedPricing({ annual = false }: AnimatedPricingProps) {
   return (
-    <section className="bg-background px-4 py-12 transition-colors">
+    <section className="bg-background px-4 py-12">
       <div className="mx-auto flex flex-wrap justify-center gap-4">
         <PricingCard
           label="Drive"
@@ -113,11 +113,12 @@ function PricingCard({
       whileHover="hover"
       transition={{ duration: 1, ease: "backInOut" }}
       variants={{ hover: { scale: 1.03 } }}
-      className={`relative w-80 shrink-0 overflow-hidden rounded-xl p-8 pb-24 ${background} shadow-lg transition-shadow hover:shadow-xl`}
+      style={{ willChange: "transform" }}
+      className={`relative w-80 shrink-0 overflow-hidden rounded-xl p-8 pb-24 ${background} shadow-xl`}
     >
       <div className="relative z-10 text-white">
         <div className="mb-3 flex items-center gap-2">
-          <span className="block w-fit rounded-full border border-white/20 bg-white/20 px-3 py-0.5 text-sm font-medium text-white backdrop-blur-sm">
+          <span className="block w-fit rounded-full border border-white/20 bg-white/20 px-3 py-0.5 text-sm font-medium text-white">
             {label}
           </span>
           {badge && (
@@ -159,7 +160,7 @@ function PricingCard({
           href="https://calendar.app.google/LVzTHL3eHRQX4KpQ6"
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-4 left-4 right-4 z-20 inline-flex items-center justify-center rounded-lg border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur-sm transition-all duration-200 hover:border-white/80 hover:bg-white/10 hover:text-white"
+          className="absolute bottom-4 left-4 right-4 z-20 inline-flex items-center justify-center rounded-lg border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur-sm transition-[color,background-color,border-color] duration-200 hover:border-white/80 hover:bg-white/10 hover:text-white"
         >
           {cta}
         </a>
@@ -168,7 +169,7 @@ function PricingCard({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-4 left-4 right-4 z-20 inline-flex items-center justify-center rounded-lg border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur-sm transition-all duration-200 hover:border-white/80 hover:bg-white/10 hover:text-white"
+          className="absolute bottom-4 left-4 right-4 z-20 inline-flex items-center justify-center rounded-lg border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur-sm transition-[color,background-color,border-color] duration-200 hover:border-white/80 hover:bg-white/10 hover:text-white"
         >
           {cta}
         </a>
